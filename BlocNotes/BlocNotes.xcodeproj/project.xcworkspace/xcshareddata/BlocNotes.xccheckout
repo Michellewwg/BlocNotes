@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64C21430-0E56-4532-87DC-CD8EB3C85769</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3DDC1236E7A341CB885AC41B2545EB9399FCE23F</key>
+		<string>github.com:michellewwg/BlocNotes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BlocNotes/BlocNotes.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3DDC1236E7A341CB885AC41B2545EB9399FCE23F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:michellewwg/BlocNotes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3DDC1236E7A341CB885AC41B2545EB9399FCE23F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3DDC1236E7A341CB885AC41B2545EB9399FCE23F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BlocNotes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
