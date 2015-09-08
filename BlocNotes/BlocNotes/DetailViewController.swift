@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
+    var managedObjectContext: NSManagedObjectContext? = nil
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+ 
+    
+    @IBOutlet weak var noteTitle: UITextField!
+   
+  
+    @IBOutlet weak var noteBody: UITextView!
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -26,6 +35,13 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.valueForKey("timeStamp")!.description
             }
+            if let label = self.noteBody {
+                label.text = detail.valueForKey("noteBody")! as? String
+            }
+            if let label = self.noteTitle {
+                label.text = detail.valueForKey("noteTitle")!  as? String
+            }
+
         }
     }
 
@@ -34,12 +50,31 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        updateObject()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    func updateObject() {
+        let context = self.managedObjectContext
+        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
+        detailItem!.setValue(self.noteBody.text , forKey: "noteBody")
+        detailItem!.setValue(self.noteTitle.text, forKey: "noteTitle")
+        // Save the context.
+        var error: NSError? = nil
+        if context!.save(&error) == false {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //println("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
+    }
 
 }
 
