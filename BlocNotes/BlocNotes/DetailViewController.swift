@@ -60,21 +60,24 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func updateObject() {
-        let context = self.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
-        detailItem!.setValue(self.noteBody.text , forKey: "noteBody")
-        detailItem!.setValue(self.noteTitle.text, forKey: "noteTitle")
-        // Save the context.
-        var error: NSError? = nil
-        if context!.save(&error) == false {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //println("Unresolved error \(error), \(error.userInfo)")
-            abort()
+        if let context = self.managedObjectContext {
+            _ = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
+            detailItem!.setValue(self.noteBody.text , forKey: "noteBody")
+            detailItem!.setValue(self.noteTitle.text, forKey: "noteTitle")
+            // Save the context.
+        
+            do {
+                  try context.save()
+               
+      
+            } catch {
+                abort()
+            }
         }
     }
-
 }
+
+
 
